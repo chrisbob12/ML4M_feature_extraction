@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<WekiInputHelperFileData>
+  <oscReceivePort>6448</oscReceivePort>
+  <oscSendPort>6449</oscSendPort>
+  <sendHostname>localhost</sendHostname>
+  <sendOscMessage>/wek/inputs</sendOscMessage>
+  <inputs>
+    <oscMessage>/K2/</oscMessage>
+    <numInputs>4</numInputs>
+    <groupName>Inputs</groupName>
+    <inputNames>
+      <string>K2_1</string>
+      <string>K2_2</string>
+      <string>K2_3</string>
+      <string>K2_4</string>
+    </inputNames>
+  </inputs>
+  <outputs>
+    <outputs class="linked-list">
+      <wekiinputhelper.Modifiers.WindowedOperation>
+        <name>K2_1_Avg50</name>
+        <index>0</index>
+        <windowSize>50</windowSize>
+        <op class="wekiinputhelper.Modifiers.AverageWindowOperation"/>
+      </wekiinputhelper.Modifiers.WindowedOperation>
+      <wekiinputhelper.Modifiers.WindowedOperation>
+        <name>K2_2_Avg50</name>
+        <index>1</index>
+        <windowSize>50</windowSize>
+        <op class="wekiinputhelper.Modifiers.AverageWindowOperation"/>
+      </wekiinputhelper.Modifiers.WindowedOperation>
+      <wekiinputhelper.Modifiers.WindowedOperation>
+        <name>K2_3_Avg50</name>
+        <index>2</index>
+        <windowSize>50</windowSize>
+        <op class="wekiinputhelper.Modifiers.AverageWindowOperation"/>
+      </wekiinputhelper.Modifiers.WindowedOperation>
+      <wekiinputhelper.Modifiers.WindowedOperation>
+        <name>K2_1_Avg10</name>
+        <index>0</index>
+        <windowSize>10</windowSize>
+        <op class="wekiinputhelper.Modifiers.AverageWindowOperation"/>
+      </wekiinputhelper.Modifiers.WindowedOperation>
+    </outputs>
+    <numOutputTypes>4</numOutputTypes>
+    <dimensionality>4</dimensionality>
+    <hasDependencies>false</hasDependencies>
+  </outputs>
+  <inputTriggerer class="wekiinputhelper.TriggerOnReceive">
+    <c>
+      <type>GREATER_THAN</type>
+      <howLong>REPEAT</howLong>
+      <index>3</index>
+      <val>100.0</val>
+      <appliesTo>OUTPUT</appliesTo>
+    </c>
+  </inputTriggerer>
+  <isSendingOriginalInputs>false</isSendingOriginalInputs>
+</WekiInputHelperFileData>
